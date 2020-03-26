@@ -1,7 +1,9 @@
 import java.util.*;
 
 public class Month {
-	ArrayList<Cell> Days = new ArrayList<Cell>();
+
+	
+	HashMap<Integer, Cell> Days = new HashMap<>();
 	String month_name;
 	
 	public Month(int num, String name)
@@ -9,7 +11,7 @@ public class Month {
 		month_name = name;
 		for (int i = 0; i < num; i++)
 		{
-			Days.add(new Cell(i));
+			Days.put(i+1, (new Cell(i)));
 		}
 	}
 }

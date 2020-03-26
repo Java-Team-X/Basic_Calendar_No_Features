@@ -1,7 +1,7 @@
 
 public class Cell {
 	int day;
-	String info;
+	String info = null;
 	
 	public Cell(int num)
 	{
@@ -10,11 +10,17 @@ public class Cell {
 	
 	public void add_string(String arg)
 	{
-		info = info + (arg + "\n");
+		if (info == null)
+			info = arg;
+		else
+			info = info + ("\n" + arg);
 	}
 	
 	public void display()
 	{
-		System.out.println(info);
+		if (info == null)
+			System.out.println("Nothing on the agenda!\n");
+		else
+			System.out.println(info + "\n");
 	}
 }
